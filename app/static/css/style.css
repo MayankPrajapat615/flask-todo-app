@@ -1,0 +1,315 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: #f8f9fa;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    color: #343a40;
+}
+
+.container a{
+    text-decoration: none;
+    color: #007bff;
+}
+
+header{
+    background: linear-gradient(to_right, #0062e6, #33aeff);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1{
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav{
+    text-align: center;
+    margin-top: 10px;
+}
+nav a{
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover{
+    color: #ffdd57;
+}
+
+footer{
+    background-color: #343a40;
+    color: #ccc;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 60px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p{
+    margin: 0;
+    color: #ccc;
+    font-size: medium;
+}
+
+.flash.success{
+    color: green;
+}
+
+.flash.danger{
+    color: red;
+}
+
+.flash.info{
+    color: blue;
+}
+
+.login_box{
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login_box h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form_group{
+    margin-bottom: 15px;
+}
+
+.form_group label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form_group input{
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: medium;
+    color: #ccc;
+    margin-bottom: 6px;
+}
+
+.btn{
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover{
+    background-color: #0056b3;
+}
+
+.task_box{
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: fit-content;
+    margin: auto;
+}
+
+.task_form{
+    display: flex;
+    margin-bottom: 20px;
+    gap: 20px;
+
+}
+
+.task_form input[type="text"]{
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: medium;
+}
+
+.task_form .btn{
+    padding: 12px 30px;
+    font-size: medium;
+}
+
+/* Fixed class name - you had task_table but HTML uses tasks_table */
+
+.tasks_table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.tasks_table th {
+    padding: 15px 12px;
+    text-align: left;
+    background-color: #4A90E2;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.tasks_table td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+    background-color: white;
+    color: #333;
+}
+
+.tasks_table tbody tr:hover {
+    background-color: #f8f9fa;
+    transition: background-color 0.2s ease;
+}
+
+.tasks_table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Fixed class name - you had badges but HTML uses badge */
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge.pending {
+    background-color: #FFF3CD;
+    color: #856404;
+}
+
+.badge.working {
+    background-color: #CCE5FF;
+    color: #004085;
+}
+
+.badge.completed {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.btn_small {
+    padding: 8px 16px;
+    font-size: 13px;
+    border: none;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn_small:hover {
+    background-color: #495057;
+    transform: translateY(-1px);
+}
+
+.btn_clear {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.btn_clear:hover {
+    background-color: #a71d2a;
+    transform: translateY(-1px);
+}
+
+
+
+/* register form styling */
+
+
+.register-container{
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-container p{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-form{
+    margin-bottom: 15px;
+}
+
+.register-form label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.register-form input{
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: medium;
+    color: #ccc;
+    margin-bottom: 6px;
+}
+
+.signup-btn{
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.signup-btn:hover{
+    background-color: #0056b3;
+}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="register-container">
+        <h2>Register</h2>
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <p class="{{ category }}">{{ message }}</p>
+            {% endfor %}
+        {% endwith %}
+
+        <form action="{{ url_for('auth.register') }}" method="POST">
+            <div class="register-form"> 
+                <label>Username</label>
+                <input type="text" name="username" required>
+            </div>
+
+            <div class="register-form">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="register-form">
+                <label>Password</label>
+                <input type="password" name="password" required>
+                <button class="signup-btn" type="submit">Sign Up</button>
+            </div>
+        </form>
+
+        <p class="register-form">
+            Already have an account?
+            <a href="{{ url_for('auth.login') }}">Login</a>
+        </p>
+</div>
+{% endblock %}
