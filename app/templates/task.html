@@ -10,11 +10,23 @@
             <button type="submit" class="btn" >Add Task</button>
         </form>
 
+        <form method="get" action="{{ url_for('tasks.view_tasks') }}" class="sort-bar">
+            <label for="sort">Sort by</label>
+
+            <select name="sort" id="sort" onchange="this.form.submit()">
+                <option value="id" {{ 'selected' if sort_by == 'id' }}>Latest</option>
+                <option value="title" {{ 'selected' if sort_by == 'title' }}>Title (A–Z)</option>
+                <option value="status" {{ 'selected' if sort_by == 'status' }}>Status</option>
+            </select>
+        </form>
+
+
         {% if tasks %}
         <!-- <form action="{{ url_for('tasks.clear_tasks') }}" method="post">
             <button type="submit" class="btn btn_clear">Clear all tasks</button>
         </form> -->
         <br>
+
         <table class="tasks_table">
             <thead>
                 <tr>
@@ -35,7 +47,7 @@
                         </td>
                         <td>
                             <form action="{{ url_for('tasks.toggle_status', task_id=task.id) }}" method="POST">
-                                <button type="submit" class="btn_small">Next</button>
+                                <button type="submit" class="btn_small">Done</button>
                             </form>
                         </td>
                         <td>

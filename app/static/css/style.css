@@ -313,3 +313,24 @@ footer p{
 .signup-btn:hover{
     background-color: #0056b3;
 }
+
+/* <-------sorting button--------> */
+
+.sort-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.sort-bar label {
+    font-weight: 600;
+    color: #333;
+}
+
+.sort-bar select {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}

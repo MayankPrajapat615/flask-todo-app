@@ -2,17 +2,31 @@ from flask import Blueprint, request, render_template, redirect, url_for, flash,
 from app import db
 from app.models.task import Task
 from app.utils.auth import login_required
+from sqlalchemy import case, func
 
 tasks_bp = Blueprint('tasks', __name__)
 
 @tasks_bp.route('/view')
 @login_required
 def view_tasks():
-    tasks = Task.query.filter_by(
-        user_id=session['user_id']
-    ).all()
 
-    return render_template('task.html', tasks = tasks)
+    sort_by = request.args.get('sort', 'id')
+    query = Task.query.filter_by(user_id=session['user_id'])
+
+    if sort_by == 'title':
+        query = query.order_by(func.lower(Task.title).asc())
+    elif sort_by == 'status':
+        custom_order = case(
+            (Task.status == 'Pending', 1),
+            (Task.status == 'Completed', 2),
+        )
+        query = query.order_by(custom_order, func.lower(Task.title).asc())
+    else:
+        query = query.order_by(Task.id.desc())
+
+    tasks = query.all()
+
+    return render_template('task.html', tasks = tasks, sort_by=sort_by)
 
 @tasks_bp.route('/add', methods = ["POST"])
 @login_required
@@ -46,8 +60,6 @@ def toggle_status(task_id):
 
     if task:
         if task.status == 'Pending':
-            task.status = 'Working'
-        elif task.status == 'Working':
             task.status = 'Completed'
         else:
             task.status = 'Pending'
