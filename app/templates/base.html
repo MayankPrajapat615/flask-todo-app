@@ -7,20 +7,26 @@
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css') }}">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1 class="app-heading">MY TO-DO App</h1>
-            <nav>
-                <a href="{{ url_for('tasks.view_tasks') }}">Home</a>
-                {% if 'user_id' in session %}
-                    <a href="{{ url_for('auth.logout') }}">Logout</a>
-                {% else %}
-                    <a href="{{ url_for('auth.login') }}">Login</a>
-                    <a href="{{ url_for('auth.register') }}">Register</a>
-                {% endif %}
-            </nav>
+    <nav class="navbar">
+        <div class="nav-left">
+            <h1>TODO</h1>
         </div>
-    </header>
+
+        <div class="nav-right">
+            <div class="user-icon" onclick="toggleProfile(event)">
+            👤
+            </div>
+        </div>
+    </nav>
+    <div id="profile-panel">
+        <div class="profile-content">
+            <div class="profile-icon">👤</div>
+            <p class="username">{{ current_user.username }}</p>
+            <p class="email">{{ current_user.email }}</p>
+            <a href="{{ url_for('auth.logout') }}" class="logout">Logout</a>
+        </div>
+    </div>
+
     <main>
         <div class="container">
             {% with messages = get_flashed_messages(with_categories=True) %}
@@ -41,5 +47,6 @@
             <p>&copy; {{ 2025 }} my flask To-Do App</p>
         </div>
     </footer>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>

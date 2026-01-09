@@ -18,23 +18,12 @@ body{
     color: #007bff;
 }
 
-header{
-    background: linear-gradient(to_right, #0062e6, #33aeff);
-    color: white;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 header h1{
     text-align: center;
     margin: 0;
     font-size: 2.5em;
 }
 
-nav{
-    text-align: center;
-    margin-top: 10px;
-}
 nav a{
     color: white;
     margin: 0 15px;
@@ -278,9 +267,14 @@ footer p{
     margin-bottom: 20px;
 }
 
-.register-form{
+.register-form p{
     margin-bottom: 15px;
 }
+
+/* .register-form p{
+    margin-bottom: 15px;
+} */
+
 
 .register-form label{
     display: block;
@@ -333,4 +327,67 @@ footer p{
     border-radius: 5px;
     border: 1px solid #ccc;
     cursor: pointer;
+}
+
+.user-menu {
+    position: relative;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #bcbcbc;
+  height: 70px;
+}
+
+.user-icon {
+  cursor: pointer;
+  font-size: 22px;
+}
+
+#profile-panel {
+  position: fixed;
+  top: 0;
+  right: -300px;       /* hidden */
+  width: 260px;        /* 200–300px as you want */
+  height: 100%;
+  background: #5d5c5c;
+  color: white;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 10px rgba(226, 218, 218, 0.3);
+}
+
+#profile-panel.open {
+  right: 0;            /* slide in */
+}
+
+.profile-content {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.profile-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.logout {
+  display: block;
+  margin-top: 20px;
+  color: red;
+  text-decoration: none;
+}
+#profile-panel {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  transition: right 0.3s ease;
+}
+
+#profile-panel.open {
+  right: 0;
 }
