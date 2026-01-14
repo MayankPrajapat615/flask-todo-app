@@ -353,7 +353,7 @@ footer p{
   right: -300px;       /* hidden */
   width: 260px;        /* 200–300px as you want */
   height: 100%;
-  background: #5d5c5c;
+  background: #31c1ff;
   color: white;
   transition: right 0.3s ease;
   box-shadow: -2px 0 10px rgba(226, 218, 218, 0.3);
